@@ -36,7 +36,7 @@ def player():
         tracks = session.get_album_tracks(album_id=16909093)
         track = tracks[0]
         track_id = tracks[0].id
-        media_url = session.get_media_url(track_id)
+        media_url = "rtmp://" + session.get_media_url(track_id)
         data = dict(track=track, media_url=media_url)
         return render_template('player.html', data=data)
     else:
