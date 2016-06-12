@@ -37,7 +37,8 @@ def player():
         track = tracks[0]
         track_id = tracks[0].id
         media_url = session.get_media_url(track_id)
-        return render_template('player.html', media_url=media_url)
+        data = dict(track=track, media_url=media_url)
+        return render_template('player.html', data=data)
     else:
         return redirect(url_for('index'))
 
