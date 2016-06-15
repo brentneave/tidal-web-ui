@@ -20,7 +20,12 @@ module.exports = function(grunt) {
     },
     browserify: {
       main: {
-        src: 'js/site.js',
+        options: {
+          browserifyOptions: {
+            debug: true
+          }
+        },
+        src: ['js/site.js'],
         dest: '../static/js/site.js'
       }
     },
