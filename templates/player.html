@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 <h1>Tidal web player</h1>
 
 <code>track name = {{ data.track.name }}</code>
@@ -7,3 +11,11 @@
 <audio controls>
 	<source src="{{ data.media_url }}" type="audio/mp4">
 </audio>
+
+<script type="text/javascript">
+	
+	var media_url = "{{ data.media_url }}";
+
+</script>
+
+{% endblock %}
