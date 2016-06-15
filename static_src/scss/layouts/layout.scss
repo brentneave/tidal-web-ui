@@ -1,0 +1,18 @@
+.layout {
+	@include clearfix;
+
+	clear: both;
+	background-color: $white;
+
+	&__title {
+
+	}
+
+	&__content {
+
+	}
+
+	&__copy {
+
+	}
+}
