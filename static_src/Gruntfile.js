@@ -24,7 +24,7 @@ module.exports = function(grunt) {
           {
             expand: true, 
             flatten: true, 
-            src: ['node_modules/soundmanager2/swf/soundmanager2_flash9.swf'], 
+            src: ['node_modules/soundmanager2/swf/*.swf'], 
             dest: '../static/swf/'
           }
         ]
