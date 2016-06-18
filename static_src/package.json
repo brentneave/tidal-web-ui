@@ -2,7 +2,10 @@
   "name": "tidal-web-ui",
   "version": "0.0.1",
   "dependencies": {
-    "soundmanager2": "latest"
+    "av": "latest",
+    "flac.js": "latest",
+    "coffeeify": "latest",
+    "ogg.js": "latest"
   },
   "devDependencies": {
     "grunt": "~0.4.5",

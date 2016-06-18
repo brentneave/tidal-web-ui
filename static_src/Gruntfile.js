@@ -18,18 +18,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    copy: {
-      main: {
-        files: [
-          {
-            expand: true, 
-            flatten: true, 
-            src: ['node_modules/soundmanager2/swf/*.swf'], 
-            dest: '../static/swf/'
-          }
-        ]
-      }
-    },
     browserify: {
       main: {
         options: {
@@ -56,6 +44,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-browserify');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.registerTask('default',['sass', 'autoprefixer', 'copy', 'browserify', 'watch']);
+  grunt.registerTask('default',['sass', 'autoprefixer', 'browserify', 'watch']);
 }
