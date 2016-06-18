@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     sass: {
       dist: {
-        options:{
+        options: {
           style:'compressed'
         },
         files: {
@@ -11,11 +11,23 @@ module.exports = function(grunt) {
         }
       }
     },
-    autoprefixer:{
-      dist:{
-        files:{
+    autoprefixer: {
+      dist: {
+        files: {
           '../static/css/screen.css':'../static/css/screen.css'
         }
+      }
+    },
+    copy: {
+      main: {
+        files: [
+          {
+            expand: true, 
+            flatten: true, 
+            src: ['node_modules/soundmanager2/swf/soundmanager2_flash9.swf'], 
+            dest: '../static/swf/'
+          }
+        ]
       }
     },
     browserify: {
@@ -44,5 +56,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-browserify');
-  grunt.registerTask('default',['sass', 'autoprefixer', 'browserify', 'watch']);
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.registerTask('default',['sass', 'autoprefixer', 'copy', 'browserify', 'watch']);
 }
